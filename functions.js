@@ -127,11 +127,15 @@ function saveColors() {
     const timerColor = document.getElementById('timerColor').value;
     const statusColor = document.getElementById('statusColor').value;
 
-    // Guardar en localStorage
-    localStorage.setItem('obsTimerConfig', JSON.stringify({
-        timerColor,
-        statusColor
-    }));
+    // Get existing config first
+    const config = JSON.parse(localStorage.getItem('obsTimerConfig') || '{}');
+
+    // Update only the color properties while preserving others
+    config.timerColor = timerColor;
+    config.statusColor = statusColor;
+
+    // Save back to localStorage
+    localStorage.setItem('obsTimerConfig', JSON.stringify(config));
 }
 
 // Cargar colores guardados al iniciar
@@ -145,5 +149,26 @@ window.addEventListener('load', function () {
 });
 
 
+function savePosition() {
+    const horizontalPosition = document.getElementById('horizontalPosition').value;
+    const verticalPosition = document.getElementById('verticalPosition').value;
 
+    const config = JSON.parse(localStorage.getItem('obsTimerConfig') || '{}');
+    config.horizontalPosition = horizontalPosition;
+    config.verticalPosition = verticalPosition;
+
+    localStorage.setItem('obsTimerConfig', JSON.stringify(config));
+}
+
+// Modify the existing window.addEventListener('load') to include position loading
+window.addEventListener('load', function () {
+    const savedConfig = localStorage.getItem('obsTimerConfig');
+    if (savedConfig) {
+        const config = JSON.parse(savedConfig);
+        document.getElementById('timerColor').value = config.timerColor || '#ffffff';
+        document.getElementById('statusColor').value = config.statusColor || '#cccccc';
+        document.getElementById('horizontalPosition').value = config.horizontalPosition || 'left';
+        document.getElementById('verticalPosition').value = config.verticalPosition || 'top';
+    }
+});
 

@@ -9,7 +9,9 @@
 </head>
 
 <body>
+
     <div class="container">
+        <a href="obs-timer.html" target="_blank">Abrir vista para OBS</a>
         <div class="controls">
             <button class="mode-btn focus" data-time="50">Focus 50</button>
             <button class="mode-btn short" data-time="10">Break 10</button>
@@ -38,9 +40,31 @@
             </div>
             <button onclick="saveColors()">Guardar Colores</button>
         </div>
-    </div>
 
-    <a href="obs-timer.html" target="_blank">Abrir vista para OBS</a>
+        <div class="position-config">
+            <h3>Posición del Timer en OBS</h3>
+            <div class="position-grid">
+                <div class="position-column">
+                    <h4>Horizontal</h4>
+                    <select id="horizontalPosition">
+                        <option value="left">Izquierda</option>
+                        <option value="center">Centro</option>
+                        <option value="right">Derecha</option>
+                    </select>
+                </div>
+                <div class="position-column">
+                    <h4>Vertical</h4>
+                    <select id="verticalPosition">
+                        <option value="top">Arriba</option>
+                        <option value="middle">Medio</option>
+                        <option value="bottom">Abajo</option>
+                    </select>
+                </div>
+            </div>
+            <button onclick="savePosition()">Guardar Posición</button>
+        </div>
+
+    </div>
 
     <script src="functions.js"></script>
 </body>
