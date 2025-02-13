@@ -1,0 +1,137 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: transparent;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+}
+
+.timer-display {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    font-family: monospace;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.mode-btn.focus {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.mode-btn.short {
+    background-color: #2196F3;
+    color: white;
+}
+
+.mode-btn.long {
+    background-color: #9C27B0;
+    color: white;
+}
+
+.control-btn {
+    background-color: #333;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.status {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+
+/* Página de visualización para OBS */
+.obs-display {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.color-config {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.color-option {
+    margin: 10px 0;
+}
+
+label {
+    display: inline-block;
+    width: 120px;
+}
+
+.custom-timer {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+#customTime {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+.mode-btn.custom {
+    background-color: #FF5722;
+    color: white;
+}
+
+:root {
+    --timer-color: #ffffff;
+    --timer-background: transparent;
+    --status-color: #cccccc;
+}
+
+#timer {
+    font-size: 72px;
+    font-weight: bold;
+    color: var(--timer-color);
+    background: var(--timer-background);
+}
+
+#status {
+    font-size: 24px;
+    margin-top: 10px;
+    color: var(--status-color);
+}
