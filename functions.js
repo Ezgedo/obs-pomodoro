@@ -132,8 +132,6 @@ function saveColors() {
         timerColor,
         statusColor
     }));
-
-    alert('Colores guardados correctamente');
 }
 
 // Cargar colores guardados al iniciar
