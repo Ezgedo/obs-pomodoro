@@ -76,8 +76,7 @@ class Timer {
 
     complete() {
         this.pause();
-        new Audio('https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3').play();
-        alert('¡Tiempo completado!');
+        new Audio('./assets/alarm.mp3').play();
         this.reset();
     }
 
