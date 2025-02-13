@@ -178,10 +178,12 @@ select {
     font-weight: bold;
     color: var(--timer-color);
     background: var(--timer-background);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
 #status {
     font-size: 24px;
     margin-top: 10px;
     color: var(--status-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
